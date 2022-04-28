@@ -40,5 +40,5 @@ A new replacement for my old Tablet Nui
 },
 ```
 
-![icon](https://raw.githubusercontent.com/swkeep/swkeep-tablet/master/.github/images/swkeepTablet2.jpg)
-![mainMenu](https://raw.githubusercontent.com/swkeep/swkeep-tablet/master/.github/images/swkeepTablet.jpg)
+![icon](https://raw.githubusercontent.com/swkeep/swkeep-tablet/master/.github/images/swkeepTablet2.png)
+![mainMenu](https://raw.githubusercontent.com/swkeep/swkeep-tablet/master/.github/images/swkeepTablet.png)
