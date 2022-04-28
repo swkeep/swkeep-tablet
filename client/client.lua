@@ -139,6 +139,12 @@ AddEventHandler('onResourceStart', function(resourceName)
      end
 end)
 
+RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
+     for key, app in pairs(Config.Apps) do
+          APPS:add(app)
+     end
+end)
+
 exports("AddAppToList", AddAppToList)
 
 -- RegisterNetEvent('qb-menu:client:openMenu', function(data)
