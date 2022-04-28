@@ -5,11 +5,17 @@ author "Swkeep#7049"
 
 client_scripts {
   'client/client.lua',
-  'config.lua'
+  'config.lua',
+  'client/functions.lua'
 }
 
-server_scripts {
+shared_scripts {
+  'shared/shared.lua'
+}
+
+server_script {
   'server/server.lua',
+  'server/functions.lua',
 }
 
 files { 'html/*', 'html/assets/*', 'html/icons/*' }
