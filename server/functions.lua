@@ -22,3 +22,56 @@ function InitTablet(source, item)
      info.installedApps = { 'appstore' }
      updatePlayerItemData(Player, item.slot, info)
 end
+
+local function findTablet(Player)
+     for key, item in pairs(Player.PlayerData.items) do
+          if item.name == 'keeptablet' then
+               return item
+          end
+     end
+end
+
+local function isInstalled(info, appname)
+     for key, appName in pairs(info.installedApps) do
+          if appName == appname then
+               return true, key
+          end
+     end
+     return false
+end
+
+function KeepStore_installApp(source, appname)
+     local Player = QBCore.Functions.GetPlayer(source)
+     local item_tablet = findTablet(Player)
+     local installed, index = isInstalled(item_tablet.info, appname)
+     if installed == false then
+          local apps = item_tablet.info.installedApps
+          apps[#apps + 1] = appname
+          updatePlayerItemData(Player, item_tablet.slot, item_tablet.info)
+          return 'installed'
+     else
+          item_tablet.info.installedApps[index] = nil
+          updatePlayerItemData(Player, item_tablet.slot, item_tablet.info)
+          return 'uninstalled'
+     end
+end
+
+function GetInstalledApps(source, APPS)
+     local Player = QBCore.Functions.GetPlayer(source)
+     local item_tablet = findTablet(Player)
+     local tmpAPPS = {}
+     for key, name in pairs(item_tablet.info.installedApps) do
+          for key, app in pairs(APPS) do
+               if app.name == name then
+                    table.insert(tmpAPPS, app)
+               end
+          end
+     end
+     return tmpAPPS
+end
+
+function getInstalledApps(source)
+     local Player = QBCore.Functions.GetPlayer(source)
+     local item_tablet = findTablet(Player)
+     return item_tablet.info.installedApps
+end

@@ -9,18 +9,16 @@ QBCore.Functions.CreateUseableItem("keeptablet", function(source, item)
      end
 end)
 
-local function perpareDataByApp(source, player, appName)
-     if appName == 'expansiontrunk' then
+QBCore.Functions.CreateCallback('swkeep-tablet:server:installApp', function(source, cb, req)
+     local res = KeepStore_installApp(source, req.appname)
+     cb(res)
+end)
 
-     end
-end
-
-QBCore.Functions.CreateCallback('swkeep-tablet:server:SendDataToTablet', function(source, cb, appName)
-     local player = QBCore.Functions.GetPlayer(source)
-     if player ~= nil then
-          cb(perpareDataByApp(source, player, appName))
-     else
-          cb(nil)
+QBCore.Functions.CreateCallback('swkeep-tablet:server:getInstalledApps', function(source, cb, req)
+     if req['type'] == 'installationList' then
+          cb(getInstalledApps(source))
+     elseif req['type'] == 'installedList' then
+          cb(GetInstalledApps(source, req.APPS))
      end
 end)
 
