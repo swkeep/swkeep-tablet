@@ -1,6 +1,8 @@
 # swkeep-tablet
 
 A new replacement for my old Tablet Nui
+- current version is compiled.
+- you can find source code here [swkeepTablet-sourceCode](https://github.com/swkeep/swkeepTablet-sourceCode)
 
 # Installation
 
