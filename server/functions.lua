@@ -24,6 +24,9 @@ function InitTablet(source, item)
 end
 
 local function findTablet(Player)
+     if Player == nil or Player.PlayerData == nil then
+          return nil
+     end
      for key, item in pairs(Player.PlayerData.items) do
           if item.name == 'keeptablet' then
                return item
@@ -43,6 +46,9 @@ end
 function KeepStore_installApp(source, appname)
      local Player = QBCore.Functions.GetPlayer(source)
      local item_tablet = findTablet(Player)
+     if item_tablet == nil then
+          return
+     end
      local installed, index = isInstalled(item_tablet.info, appname)
      if installed == false then
           local apps = item_tablet.info.installedApps
@@ -59,6 +65,9 @@ end
 function GetInstalledApps(source, APPS)
      local Player = QBCore.Functions.GetPlayer(source)
      local item_tablet = findTablet(Player)
+     if item_tablet == nil then
+          return
+     end
      local tmpAPPS = {}
      for key, name in pairs(item_tablet.info.installedApps) do
           for key, app in pairs(APPS) do
@@ -73,5 +82,8 @@ end
 function getInstalledApps(source)
      local Player = QBCore.Functions.GetPlayer(source)
      local item_tablet = findTablet(Player)
+     if item_tablet == nil then
+          return
+     end
      return item_tablet.info.installedApps
 end

@@ -73,3 +73,7 @@ RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
           APPS:add(app)
      end
 end)
+
+RegisterNetEvent('QBCore:Client:OnPlayerUnload', function()
+     APPS.data = {}
+end)
