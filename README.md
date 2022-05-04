@@ -1,6 +1,8 @@
 # swkeep-tablet
 
+qbcore tablet
 A new replacement for my old Tablet Nui
+
 - current version is compiled.
 - you can find source code here [swkeepTablet-sourceCode](https://github.com/swkeep/swkeepTablet-sourceCode)
 
@@ -42,5 +44,5 @@ A new replacement for my old Tablet Nui
 },
 ```
 
+![qbcore tablet](https://raw.githubusercontent.com/swkeep/swkeep-tablet/master/.github/images/swkeepTablet.png)
 ![icon](https://raw.githubusercontent.com/swkeep/swkeep-tablet/master/.github/images/swkeepTablet2.png)
-![mainMenu](https://raw.githubusercontent.com/swkeep/swkeep-tablet/master/.github/images/swkeepTablet.png)
